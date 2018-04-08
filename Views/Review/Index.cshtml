@@ -1,0 +1,65 @@
+
+@{
+    ViewData["Title"] = "Add Review";
+}
+@model restauranter.Models.ReviewViewModel
+
+<div class="wells wells-sm">
+    
+    <form asp-controller="Review" asp-action="Create" method="post">
+        <div class="form-horizontal">
+        <h3>Write a new review</h3>
+        <hr />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ReviewerName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ReviewerName" class="form-control" />
+                <span asp-validation-for="ReviewerName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RestaurantName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="RestaurantName" class="form-control" />
+                <span asp-validation-for="RestaurantName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ReviewText" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="ReviewText" class="form-control"  cols="30" rows="3"></textarea>
+
+                <span asp-validation-for="ReviewText" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Rating" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateVisit" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DateVisit" class="form-control" />
+                <span asp-validation-for="DateVisit" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+</div>

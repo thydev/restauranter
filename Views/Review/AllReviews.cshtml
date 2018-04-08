@@ -1,0 +1,11 @@
+<hr />
+@foreach(var r in @ViewBag.Reviews) {
+    <div class="wells wells-sm">
+        <p>Review for: @r.RestaurantName  @r.Rating star(s)</p>
+        <p>Reviewer: @r.ReviewerName  @r.DateVisit</p>
+        <p>@r.ReviewText</p>
+        <p><a href="/@r.ReviewId/helpful">Helpful</a> : @r.Helpful</p>
+        <p><a href="/@r.ReviewId/unhelpful">Unhelpful</a> : @r.Unhelpful</p>
+    </div>
+    
+}
