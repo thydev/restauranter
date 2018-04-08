@@ -53,7 +53,7 @@ namespace restauranter.Controllers
         [Route("reviews")]
         public IActionResult ShowReviews()
         {
-            List<Review> AllReviews = _context.Reviews.ToList();
+            List<Review> AllReviews = _context.Reviews.OrderByDescending(r => r.DateVisit).ToList();
             ViewBag.Reviews = AllReviews;
             return View("AllReviews");
         }
@@ -70,7 +70,7 @@ namespace restauranter.Controllers
                 RateReview.Unhelpful += 1;
             }
             _context.SaveChanges();
-            
+
             return RedirectToAction("ShowReviews");
         }
         public IActionResult Error()
